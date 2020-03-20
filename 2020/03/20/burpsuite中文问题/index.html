@@ -137,6 +137,14 @@
 <ul>
     <li><div class="all active">全部文章<small>(1)</small></div></li>
     
+        
+            
+            <li><div data-rel="网络安全">网络安全<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -191,7 +199,7 @@
     
     <nav id="title-list-nav">
         
-        <a  class=""
+        <a  class="网络安全 "
            href="/2020/03/20/burpsuite%E4%B8%AD%E6%96%87%E9%97%AE%E9%A2%98/"
            data-tag="burpsuite"
            data-author="" >
@@ -219,6 +227,12 @@
         
         
         
+        <span class="book">
+            
+                <a  data-rel="网络安全">网络安全</a>
+            
+        </span>
+        
         
         <span class="tag">
             
@@ -229,7 +243,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-20 20:13:02'>2020-03-20 20:11</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-20 22:16:02'>2020-03-20 20:11</time>
         
     </div>
     <div class="article-meta">
@@ -251,7 +265,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x00"><span class="toc-text">0x00</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-显示中文乱码"><span class="toc-text">0x01 显示中文乱码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-显示中文正常，但是无法匹配中文"><span class="toc-text">0x02 显示中文正常，但是无法匹配中文</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -267,7 +281,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>test</p>
+        <h1 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h1><ol>
+<li>显示中文乱码</li>
+<li>输入中文乱码</li>
+</ol>
+<h1 id="0x01-显示中文乱码"><a href="#0x01-显示中文乱码" class="headerlink" title="0x01 显示中文乱码"></a>0x01 显示中文乱码</h1><p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055714714-1434967031.png" alt="img"></p>
+<p>先查看网页编码</p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055721489-1000763562.png" alt="img"></p>
+<p>然后在修改编码为网页的编码一致并重启burpsuite即可</p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303060755472-1380171808.png" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055733236-340158100.png" alt="img"></p>
+<h1 id="0x02-显示中文正常，但是无法匹配中文"><a href="#0x02-显示中文正常，但是无法匹配中文" class="headerlink" title="0x02 显示中文正常，但是无法匹配中文"></a>0x02 显示中文正常，但是无法匹配中文</h1><p><strong>临时解决办法(如果有好一点的办法在改)</strong></p>
+<p>找到了一处验证码漏洞，想用burpsuite的intruder模块来爆破账号密码，但是想用Grep-Match功能的时候发现无法输入中文，这就尴尬了。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055743917-1234763030.png" alt="img"></p>
+<p>既然不能使用中文，那就用其他编码匹配吧。<br>按此修改：字体随意</p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055751215-349623717.png" alt="img"></p>
+<p>修改完成后重启burpsuite<br>然后发个包看看</p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055758226-542601842.png" alt="img"></p>
+<p>这种编码是可以匹配的。<br>把正常看到的中文转换成这种编码需要用到VS code这个编辑器(其他编辑器也可以，爱用啥用啥吧)。<br>打开一个文件，输入需要转换的中文，把编码转换为：<code>ISO-8859-1</code></p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055806755-830227799.png" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055811459-700179194.png" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055816421-140392082.png" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055821188-1412501570.png" alt="img"></p>
+<p>ojbk</p>
+<p><img src="https://img2020.cnblogs.com/blog/1478497/202003/1478497-20200303055830176-219535561.png" alt="img"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 761202280@qq.com </span>
@@ -285,7 +322,7 @@
     
     <p><span class="copy-title">本文作者:</span><a  title="iZero">iZero</a></p>
     <p><span class="copy-title">发布时间:</span>2020-03-20, 20:11:11</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-20, 20:13:02</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-20, 22:16:02</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/20/burpsuite%E4%B8%AD%E6%96%87%E9%97%AE%E9%A2%98/" title="burpsuite中文问题">https://izero8.github.io/2020/03/20/burpsuite%E4%B8%AD%E6%96%87%E9%97%AE%E9%A2%98/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
